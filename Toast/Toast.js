@@ -12,13 +12,12 @@ function Toast({ children, remove, type }) {
   }, []);
 
   return (
-    <div className={styles[`${type}Toast`]}>
-      <div className={styles.text}>
-        <strong className={styles[type]}>{type === 'error' ? '[Error] ' : '[Success] '}</strong>
+    <div className="toast">
+      <div className="toast__text">
         { children }
       </div>
       <div>
-        <button onClick={remove} className={styles.closeButton}>x</button>
+        <button onClick={remove} className="toast__close-btn">x</button>
       </div>
     </div>
   );
