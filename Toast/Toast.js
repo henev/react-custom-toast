@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 
-function Toast({ children, remove, type }) {
-  const removeRef = useRef(remove);
+function Toast({ children, remove }) {
+  const removeRef = useRef();
   removeRef.current = remove;
 
   useEffect(() => {
