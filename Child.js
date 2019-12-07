@@ -8,7 +8,7 @@ function Child() {
   return (
     <>
       <h3>Hello from child component!</h3>
-      <button onClick={showToast}>Show me toast</button>
+      <button onClick={showToast}>Show me a toast</button>
     </>
   );
 }
