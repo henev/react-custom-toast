@@ -19,7 +19,6 @@ function withToastProvider(Component) {
     const [toasts, setToasts] = useState([]);
     const add = content => {
       const id = generateUEID();
-      const toastsCopy = [...toasts];
 
       setToasts([...toasts, { id, content }]);
     };
