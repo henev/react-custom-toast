@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { createPortal } from "react-dom";
 
 import ToastContext from "./context";
@@ -23,9 +23,10 @@ function withToastProvider(Component) {
       setToasts([...toasts, { id, content }]);
     };
     const remove = id => setToasts(toasts.filter(t => t.id !== id));
+    const providerValue = useMemo(() => { return { add, remove } }, [toasts]);
 
     return (
-      <ToastContext.Provider value={{ add, remove }}>
+      <ToastContext.Provider value={ providerValue }>
         <Component {...props} />
 
         {createPortal(
