@@ -25,7 +25,7 @@ export const ToastProvider = (props) => {
     setToasts((currentToasts) =>
       currentToasts.filter((toast) => toast.id !== id)
     );
-  const contextValue = useMemo(() => ({ open, close }), []);
+  const contextValue = useMemo(() => ({ open }), []);
 
   return (
     <ToastContext.Provider value={contextValue}>
