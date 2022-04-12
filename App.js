@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Child } from './Child';
 import './style.css';
 
 export const App = () => {
+  const [count, setCount] = useState(0);
   return (
-    <div>
+    <div style={{ border: '1px solid red', padding: '8px' }}>
+      <h1>Hello from App component.</h1>
       <Child />
-      <p>Hello from App component.</p>
     </div>
   );
 };

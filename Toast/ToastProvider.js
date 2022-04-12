@@ -16,10 +16,16 @@ function generateUEID() {
 
 export const ToastProvider = (props) => {
   const [toasts, setToasts] = useState([]);
-  const add = (content) =>
-    setToasts([...toasts, { id: generateUEID(), content }]);
-  const remove = (id) => setToasts(toasts.filter((t) => t.id !== id));
-  const contextValue = useMemo(() => ({ add, remove }), [toasts]);
+  const open = (content) =>
+    setToasts((currentToasts) => [
+      ...currentToasts,
+      { id: generateUEID(), content },
+    ]);
+  const close = (id) =>
+    setToasts((currentToasts) =>
+      currentToasts.filter((toast) => toast.id !== id)
+    );
+  const contextValue = useMemo(() => ({ open, close }), []);
 
   return (
     <ToastContext.Provider value={contextValue}>
@@ -28,7 +34,7 @@ export const ToastProvider = (props) => {
       {createPortal(
         <div className="toasts-wrapper">
           {toasts.map((toast) => (
-            <Toast key={toast.id} remove={() => remove(toast.id)}>
+            <Toast key={toast.id} close={() => close(toast.id)}>
               {toast.content}
             </Toast>
           ))}
