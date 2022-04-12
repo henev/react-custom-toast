@@ -1,4 +1,4 @@
-import withToastProvider from './withToastProvider';
-import useToast from './useToast';
+import { ToastProvider } from './ToastProvider';
+import { useToast } from './useToast';
 
-export { withToastProvider, useToast };
+export { ToastProvider, useToast };

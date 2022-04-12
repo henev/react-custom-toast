@@ -1,20 +1,13 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
-import { withToastProvider } from './Toast';
-import Child from './Child';
-import './style.css';
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import { ToastProvider } from './Toast';
+import { App } from './App';
 
-function App() {
-  return (
-    <div>
-      <Child />
-      <p>
-        Hello from App component.
-      </p>
-    </div>
-  );
-}
+const container = document.getElementById('root');
+const root = createRoot(container);
 
-const AppWithToastProvider = withToastProvider(App);
-
-render(<AppWithToastProvider />, document.getElementById('root'));
+root.render(
+  <ToastProvider>
+    <App />
+  </ToastProvider>
+);

@@ -1,9 +1,10 @@
 import React from 'react';
 import { useToast } from './Toast';
 
-function Child() {
+export const Child = () => {
   const toast = useToast();
-  const showToast = () => toast.add('Toast created from child component!');
+  const showToast = () =>
+    toast.add(`Toast created from child component! ${Math.random() * 2332}`);
 
   return (
     <>
@@ -11,6 +12,4 @@ function Child() {
       <button onClick={showToast}>Show me a toast</button>
     </>
   );
-}
-
-export default Child;
+};

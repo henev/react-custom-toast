@@ -1,26 +1,22 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 
-function Toast({ children, remove }) {
-  const removeRef = useRef();
-  removeRef.current = remove;
-
+export const Toast = ({ children, remove }) => {
   useEffect(() => {
-    const duration = 5000;
-    const id = setTimeout(() => removeRef.current(), duration);
+    console.log('key');
+    const duration = 3000;
+    const id = setTimeout(remove, duration);
 
     return () => clearTimeout(id);
   }, []);
 
   return (
     <div className="toast">
-      <div className="toast__text">
-        { children }
-      </div>
+      <div className="toast__text">{children}</div>
       <div>
-        <button onClick={remove} className="toast__close-btn">x</button>
+        <button onClick={remove} className="toast__close-btn">
+          x
+        </button>
       </div>
     </div>
   );
-}
-
-export default Toast;
+};
