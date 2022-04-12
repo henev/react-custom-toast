@@ -1,4 +1,4 @@
-# React custom toast from scratch
+# React Custom Toast Notification Component from Scratch
 
 [Edit on StackBlitz ⚡️](https://stackblitz.com/edit/react-custom-toast)
 
