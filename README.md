@@ -1,5 +1,5 @@
 # 🍞 React Custom Toast Notification Component from Scratch - Part 1
-### Simple Toast Component utilizing Hooks and Context
+### Simple Toast Component Utilizing React's Hooks and Context
 
 [Edit on StackBlitz ⚡️](https://stackblitz.com/edit/react-custom-toast)
 
